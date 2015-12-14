@@ -1,0 +1,1470 @@
+%% This style is provided for the ICSE 2015 main conference,
+%% ICSE 2015 co-located events, and ICSE 2015 workshops.
+
+%% bare_conf_ICSE15.tex
+%% V1.4
+%% 2014/05/22
+
+
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+%Todd added for fractions
+\usepackage{xfrac}
+%Todd added for strike-outs
+\usepackage{ulem}
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Green-Lighting Software Engineering Practicums with SEMAT Essence}
+%\title{Green-Lighting Proposals for Software Engineering Practicums using SEMAT Essence Framework}
+\title{Green-Lighting Proposals for Software Engineering Team-based Project Courses}
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{\IEEEauthorblockN{Michael Shell}
+%\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
+%Georgia Institute of Technology\\
+%Atlanta, Georgia 30332--0250\\
+%Email: http://www.michaelshell.org/contact.html}
+%\and
+%\IEEEauthorblockN{Homer Simpson}
+%\IEEEauthorblockA{Twentieth Century Fox\\
+%Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\and
+%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+%\IEEEauthorblockA{Starfleet Academy\\
+%San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212\\
+%Fax: (888) 555--1212}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+\author{\IEEEauthorblockN{Todd Sedano,
+Cecile Peraire,
+Arthi Rengasamy}
+\IEEEauthorblockA{Carnegie Mellon Unveristy \\
+Silicon Valley Campus\\
+Moffett Field, CA 94035, USA \\
+Email: todd.sedano@sv.cmu.edu, cecile.peraire@sv.cmu.edu, arthi.rengasamy@sv.cmu.edu
+}}
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+% make the title area
+\maketitle
+
+
+%\begin{abstract}
+%Background: Many software engineering curriculum conclude with a
+%practicum or capstone project course. For courses involving external
+%clients, the course owner typically follows a Request for Proposal
+%process to vet qualified clients and projects.
+%
+%Objective: Propose and evaluate a Green-Lighting Approach based on the
+%SEMAT (Software Engineering Method and Theory) Essence Kernel for
+%improving the request for proposal process at Carnegie Mellon University
+%in Silicon Valley.
+%
+%Method: We conducted a case study by observing and interviewing the
+%course owner, examining a group of proposals, and identifying issues
+%with the current proposal process and practicum projects.
+%
+%Results: We proposed a green-lighting project state that, based upon Essence alphas,
+%describe the minimal and ideal states that a project proposal should achieve to be
+%accepted, based on Essence alphas. The Green-Lighting Approach generated
+%conversations among the faculty that clarified the guidelines for
+%accepting and prioritizing proposals and identified deficiencies in our
+%Request for Proposal.
+%
+%Conclusion: The Green-Lighting Approach provides systematic
+%evaluation of our proposals and helps articulate why to accept or reject a proposal.
+%\end{abstract}
+begin{abstract}
+Many software engineering curriculum conclude with a
+practicum or capstone project course. For courses involving external
+clients, the course owner typically follows a Request for Proposal
+process to vet qualified clients and projects.
+
+We propose and evaluate a Green-Lighting Approach based on the
+SEMAT (Software Engineering Method and Theory) Essence Kernel for
+improving the request for proposal process at Carnegie Mellon University
+in Silicon Valley.
+
+We conducted a case study by observing and interviewing the
+course owner, examining a group of proposals, and identifying issues
+with the current proposal process and practicum projects.
+
+We propose a green-lighting project state that, based upon Essence alphas,
+describe the minimal and ideal states that a project proposal should achieve to be
+accepted, based on Essence alphas. The Green-Lighting Approach generated
+conversations among the faculty that clarified the guidelines for
+accepting and prioritizing proposals and identified deficiencies in our
+Request for Proposal.
+\end{abstract}
+
+Conclusion: The Green-Lighting Approach provides systematic
+evaluation of our proposals and helps articulate why to accept or reject a proposal.
+
+
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+\section{Introduction}
+\label{Introduction}
+% no \IEEEPARstart
+
+Many software engineering (SE) curricula finish with a practicum course
+or capstone project \cite{GSWE}. At Carnegie Mellon
+University in Silicon Valley, the curriculum culminates with a practicum
+course in order for the students to demonstrate mastery of the
+curriculum and to learn client management skills
+\cite{Katz}. The practicum allows students to reinforce
+their learning of core software engineering knowledge by applying this
+knowledge to a different problem or domain. The practicum serves as
+confirmation that the student has mastered the material. Earlier in the
+curriculum, faculty manage the students project courses by playing the
+customer or management role. The practicum provides an opportunity for
+the students to work with a real client and practice client management
+skills. Students actively manage the client engagement while faculty
+observe and coach students without interfering unless necessary. The
+students perform as a consulting team delivering a product that achieves
+the client's opportunity.
+
+The university wants to increase its impact through the practicum
+projects. The practicum course owner needs to find projects that
+balance these goals:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  maximize the students' learning experience, 
+\item
+  achieve a business goal or positively impact society, and
+\item
+  increase collaborations between faculty and industry. 
+\end{itemize}
+
+In order to accomplish the practicum goals, the faculty want to offer
+a portfolio of projects including
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  a mix of project domains,
+\item
+  a mix of startups and established companies, and 
+\item
+  a mix of exploratory research and well defined
+  endeavors.
+\end{itemize}
+
+Since we have a limited number of students and thus student teams, the
+course owner needs to be selective about proposals with respect to these
+goals. The course owner needs a systematic, non biased technique to
+filter proposals.
+
+\section{Related Work}
+\label{Related Work}
+Many software engineering professors have described their approach to providing a practical hands on experience. Most of the literature describes in detail how to run a team-based project course yet there is little discussion about the client selection process. 
+
+In 1991, Shaw and Tomayko \cite{shaw1991models} examined hundreds of undergraduate software engineering courses and interviewed scores of instructors. In their technical report, they identify two major decisions that the instructor must make: 1) deciding the mixture of lecture and project components and 2) deciding the balance technical and managerial skills taught in the course. 
+
+They describe several course models used in academia including the ``small group project'', ``large project team'' model, and  ``the project only'' model. The ``small group project' and  ``large project team'' models infuse lectures with a course long project. The ``project only'' model is typically a capstone course that focuses on the project experience.
+
+Shaw and Tomayko discusses the importance of finding an interesting project that will motivate the students for the duration of the course, but provides no model for client selection.
+
+\sout{In 1994, Moore and Potts \cite{moore1994learning} described how to do ``learn by doing'' in project courses at the undergraduate and graduate levels.}
+
+In 2001, Cal Poly \cite {Turner2001} introduced a year long capstone project course. For the first two years, they relied on one industrial partner for the entire course, but due to coordination difficulties replaced the external project with a university project. No guidance is provided for project selection.
+
+In 2002, Chamillard and Braun \cite{Chamillard2002} reflect on an undergraduate course at the U.S. Air Force Academy. They focus on tradeoffs such as the amount of guidance, documentation formats versus documentation examples, and focusing software development process versus product. They do not discuss their client selection process.
+
+In 2002, Umphress, Hendrix, and Cross \cite{Umphress2002} reflect on their 18 years of experience and describe the transformation of processes from ad hoc, to MIL-STD-498 to IEEE 1074 to the Team Software Process to Extreme Programming. No information is provided about client selection.
+
+In 2006, Coppit \cite{coppit2006} describes his strategies for overcoming the difficulties in running a large project team course including how to assess student performance. In his section on project selection, he briefly recommends that the amount of work should be commiserate with the length of the course, the scope needs to be flexible to allow cutting of features at the course's end, and have significant parallelizable work. 
+
+In 2010, Ziv and Patil \cite {ziv2010capstone} discus the experience of transitioning a capstone from one quarter to a three quarter course. The course follows a ``small group project'' model with external clients. The instructors typically have enough projects for all the enrolled students. Regarding selection criteria, the instructors take most projects within reasonable size, scope, goals and objectives, and reject only when the instructors notice a complete misunderstanding of the nature and purpose of a college-level undergraduate-level student project. 
+
+In the literature, criteria for client selection is only briefly discussed. 
+
+\section{Background}
+\label{Background}
+For the past four semesters, we applied the Project Monitoring and
+Steering Approach ~of the Essence framework
+\cite{EssenceBook} in weekly Essence Reflection
+Meetings \cite{EASE2014}. The approach provides student
+teams with a simple, lightweight, non- prescriptive and method-agnostic
+way to examine their projects holistically, structure team reflections,
+manage risks, monitor progress and steer their projects
+\cite{ICSE2014}.
+
+During the research of applying the Project Monitoring and Steering
+Approach, we observed practicum issues regarding stakeholder
+representation, requirements definition, and understanding the value of
+the opportunity. Some aspects of these issues might be attributed to
+the way in which the practicum proposals are initiated and
+accepted. For example, one client believed that she could represent several different user personas and was unwilling for student teams to interview potential users. Our motivation is to examine our Request for Proposal
+process to help address these issues.
+
+We proposed and applied a Green-Lighting Approach based on the Essence
+framework \cite{EssenceBook} to improve our practicum selection
+process and to evaluate the approach. The Green-lighting Approach
+uses the Essence alphas to describe how ready the project should be in
+each alpha, which we'll call ``green-lighting project state'' in this
+paper. The green-lighting project state serves as a gating function,
+filtering out unready projects.
+
+In this paper, we will introduce the Green-lighting Approach which
+provides a gating function for proposals. Section
+\ref{Field Study Description} describes the field study
+including the research goal, the current request for proposal, the
+proposed change, and the study protocol. Section
+\ref{Results} examines seven research questions
+supporting the research goal. Section \ref{Conclusion}
+summarizes that the findings and discusses future work.
+
+
+\section{Green-lightning Approach of the Essence framework}
+\label{Green-lightning Approach of the Essence framework}
+
+In 2012, the SEMAT community released the Essence kernel
+\cite{OMGStandard}. The Essence kernel describes a
+software project through different dimensions called alphas. For
+example, the \textbf{Stakeholder} alpha advances through the states
+\textit{Recognized}, \textit{Represented}, \textit{Involved}, 
+\textit{In Agreement}, \textit{Satisfied for Deployment}, \textit{Experimenting}, and \textit{Satisfied in Use}. Each state has a set of checklist items. For example, \textit{Recognized} contains these three checklist items:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Possible stakeholders groups are identified
+\item
+  Team agrees on relevant stakeholder groups to be represented
+\item
+  Responsibilities of stakeholder representatives are defined
+\end{itemize}
+
+A project achieves a state when the team can check all the checklist
+items for a state. This means that Essence represents projects through a
+collection of linear state machines where the states are partially
+ordered.
+
+We defined the Green-lighting Approach based upon an example of using
+the Essence framework from the Essence Book. Section 12: ``Running a
+software endeavor: From idea to Product''
+\cite{EssenceBook} describes how to use the Essence
+Kernel Alpha States to define a staging process for a hypothetical
+project. The example divides the project into four stages ``Getting
+Ready to Start,'' ``Starting Up,'' ``Running Development,'' and
+``Done.'' As the project progresses through these stages, the Alpha
+states progress. In an organization managing many projects, one could
+expect the projects to achieve certain states before making it into the
+next stage. We define the Green-Lighting Approach to evaluate the
+transitions between multiple stages.
+
+The Green-Lighting Approach has three steps:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Evaluate each proposal and determine its state in each alpha. For
+  example, a proposal that meets the three checklist items for
+   \textbf{Stakeholders} would have achieved the \textit{Recognized} state and thus
+  be in the\textit{Represented} state as seen in Figure
+  \ref{EssenceAlpha}. This is repeated for each alpha.
+  This data can be represented as a hash where the keys are the alphas
+  and the values are the alpha states, such as: \{stakeholders:
+  ``represented'', opportunity: ``solution needed'', requirements:
+  ``conceived'', software system: ``none''\}. The check marks in Figure
+  \ref{EssenceAlpha} indicate the proposal's project
+  state.
+\item
+  Determine the ``green-lighting project state,'' which is the minimal
+  acceptable state for each alpha. This too can be represented as a
+  hash. In our example, the green-lighting project state could be:
+  \{stakeholders: ``recognized'', opportunity: ``solution needed'',
+  requirements: ``conceived'', software system: ``none''\}. The shaded
+  states in Figure \ref{EssenceAlpha} represent the
+  green-lighting project state.
+\item
+  Applying the green-lighting project state to a proposal determines
+  the project's readiness. A project is ready if the proposal has a
+  larger or equal state for each alpha in the green-lighting project
+  state. Using the hash example, we compare each key of the hash and
+  make sure the proposal is ``larger or equal'' to each corresponding
+  key in the green-lighting project state. In the given example, the
+  proposal is ready in each alpha. In this regard, the approval process
+  is a function with two inputs and one boolean output. F(Hash proposal,
+  Hash greenlight\_project\_state) =\textgreater Boolean
+  accept\_propopsal
+\end{itemize}
+
+% \begin{figure}[h]
+% \includegraphics[scale=0.25]{EssenceAlpha.jpg}
+% \caption{ Essence alphas checked for a proposal and shaded for
+% green-lighting project state}\label{EssenceAlpha}
+% \end{figure}
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.45in]{EssenceAlpha.jpg}
+\caption{Essence alphas checked for a proposal and shaded for
+green-lighting project stat}
+\label{EssenceAlpha}
+\end{figure}
+
+In examining the seven Essence alphas, only four alphas,
+\textbf{Stakeholders}, \textbf{Opportunity}, \textbf{Requirements}, and \textbf{Software System} are relevant to evaluating practicum proposals. The OMG standard defines these four alphas as: \cite{OMGStandard}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  \textbf{Stakeholders}: The people, groups, or organizations who affect or
+  are affected by the software system.
+\item
+  \textbf{Opportunity}: The set of circumstances that makes it appropriate to
+  develop or change a software system.
+\item
+  \textbf{Requirements}: What the software system should do to address the
+  opportunity and satisfy the stakeholders
+\item
+  \textbf{Software System}: A system made up of software, hardware, and data
+  that provides its primary value by the execution of the software.
+\end{itemize}
+
+The other three Essence alphas only make sense once a student team is
+assigned to the project. Indeed, the \textbf{Team} has not been formed yet,
+hence it does not have a \textbf{Way of Working} and has not performed any
+\textbf{Work}. By course design, the client does not determine the team's
+\textbf{Way of Working}.
+
+
+\section{Field Study Description}
+\label{Field Study Description}
+
+Following recommendations for reporting research done in the empirical
+software engineering community
+\cite{GQM, Shaw}, we formed our
+research goal using Goal/Question/Metric:
+\cite{GQM}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{1.00in}|p{2.10in}|}
+\hline
+Analyze & SEMAT Essence’s Green-lighting Approach provided by the kernel alphas and their states \\ \hline
+for the purpose of & evaluation \\ \hline
+with respect to its & effectiveness \\ \hline
+from the point of view of the & educator and researcher \\ \hline
+in the context of  & he software engineering practicum graduate course at Carnegie Mellon University. \\
+\hline
+\end{tabular}
+\end{table}
+
+
+This paper decomposes this goal into the following questions:
+
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  \textbf{Research Question 1}: What is the initial state of most projects
+  based on the current proposals?
+\item
+  \textbf{Research Question 2}: What are the recent issues with the practicum
+  and could we address some of these issues prior to the start of the
+  project?
+\item
+  \textbf{Research Question 3}: From the faculty perspective, what should be
+  the minimum or ideal initial state of a project?
+\item
+  \textbf{Research Question 4}: How do the proposals compare against the
+  proposed minimum and ideal green-lighting project states?
+\item
+  \textbf{Research Question 5}: Do we need to improve the Request for
+  Proposal?
+% \item
+%   \textbf{Research Question 6}: What is the effect of using the Essence
+%   Green-lighting Approach on the time it takes to accept or reject a
+%   project?
+\item
+  \textbf{Research Question 6}: What are limits to the approach and
+  limitations to its effectiveness?
+\end{itemize}
+
+
+\subsection{Current Practicum Request for Proposal}
+\label{ProposalQuestions}
+
+Prior to the start of the course, the course owner solicits project
+proposals from industry and colleagues. The current practicum Request
+for Proposal asks sponsors to create and provide a document including
+the following information:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  {Name of the project}
+\item
+  {Summary of the project}
+\item
+  {Overview of the sponsoring organization}
+\item
+  {Background and problem context }
+\item
+  {Relevance and Opportunity: why is it important and who benefits}
+\item
+  {Proposed scope of work}
+\item
+  {Major project goals and objectives }
+\item
+  {Technologies and skill sets requirements }
+\item
+  {Expected team size }
+\item
+  {Currently known obstacles}
+\item
+  {Nature of working relationship with sponsoring organization}
+\item
+  {Expected use of deliverables at project completion}
+\item
+  {Preliminary project roadmap}
+\item
+  {Criteria for measures of success}
+\item
+  {Any IP, NDA, or citizenship constraints}
+\end{itemize}
+
+The course owner wants any submitted proposal to clearly communicate
+the project's big picture, the client's needs, and a general project
+roadmap. At the due date, the course owner reviews the submitted
+proposals to verify their completeness. The course owner verifies that
+the project is an appropriate educational experience, and relies on the
+students to filter the projects. The course owner encourages
+students to contact the client for clarification, if necessary.
+
+Given the number of students enrolled in the course, the course owner
+determines the expected number of teams for the course. In years when
+there are significantly more project proposals than expected number of
+teams, the students use dot voting to cull the list down to a manageable
+number. For example, for 32 students, there might be 6 to 8 teams. If
+there are 16 acceptable proposals, the course owner reduces it to 12
+practicum proposals by the students dot voting their favorite projects.
+
+Once there is a ``shortlist'' of proposals, the course owner invites
+all the clients and students to a practicum fair. The course owner asks
+the students to be familiar with all of the practicum proposals. The
+purpose is to provide a forum for the students to ask the clients
+specific questions about the project, not for the client to give a
+complete presentation about the project.The clients introduce themselves
+and have a summary slide or two to remind the students about their
+project. 
+
+The students then submit a ranked ordering of all the projects from
+their number one pick to their least favorite, and the course owner
+forms teams. The course owner tries to assign students based upon their
+first or second top choice while prioritizing paying clients. However,
+this is not always possible when too many students select the same
+project or when only one student selects a project.
+
+\subsection{Proposed Practicum Request for Proposal}
+
+We consider a modification to the current practicum Request for
+Proposal process by adding a filtering step after the proposal are
+received but before the proposals are shown to the students. For each
+proposal, we evaluate the project's state described by the proposal
+against a green-lighting project state defined using SEMAT Essence Alpha
+states. The course owner only offers the students proposals that have
+reached or exceeded the green-lighting state. If a proposal does not
+meet the minimum criteria, then either the course owner rejects the
+proposal or the course owner discusses issues with the sponsor to
+illicit more information.
+
+\subsection{Study Protocol}
+
+The study protocol is as follows:
+
+\begin{enumerate}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  We reviewed 21 submitted practicum proposals and
+  identified their initial project state (refer to \textbf{Research Question
+  1} for more information). In order to remove anchoring bias, we examined
+  and rated each proposal independently. Any discrepancies were
+  discussed in person.
+\item
+  Based upon our experience of observing the practicum course in the
+  context of prior investigations \cite{EASE2014, ICSE2014},
+  using a brainstorming session, we identified recent issues that
+  might be addressable prior to the start of the course (refer to
+  \textbf{Research Question 2} for more information).
+\item
+  During the same brainstorming session, we recommended a minimum and
+  an ideal green-lighting project state, with the purpose of addressing
+  the identified issues prior to the start of the course. The minimum
+  and ideal states need to be realistic and feasible with respect to the
+  kinds of projects that we receive (refer to \textbf{Research Question
+  3} for more information).
+\item
+  We compared the state of 21 submitted proposals against the proposed
+  minimum and ideal green-lighting project states (refer to \textbf{Research
+  Question 4} for more information). Again, in order to remove
+  anchoring bias, we reviewed and rated each proposal independently. Any
+  discrepancies were discussed in person.
+\item
+  We proposed modifications to the current questions in the Request for
+  Proposal to better reveal the initial green-lighting project state. We
+  evaluated the new questions with the sponsors (refer to \textbf{Research
+  Question 5} for more information).
+\item
+  We analyzed the study results and drew conclusions on the benefits
+  and drawback of the proposed approach (refer to \textbf{Research Question 6
+  } for more information).
+\end{enumerate}
+
+\section{Results and Discussion}
+\label{Results}
+
+\subsection{Research Question 1: What is the initial
+state of most projects based on the current proposals?}
+
+We started the Green-lighting Approach research by assessing the
+initial states of the \textbf{Stakeholders}, \textbf{Opportunity},
+\textbf{Requirements} and \textbf{Software System} alphas for 21 proposals.
+
+For the \textbf{Stakeholder} alpha, we observed that:
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  33\% did not achieve any state. These proposals did not identify
+  stakeholder groups.
+\item
+  48\% were in the \textit{Recognized} state. These proposals identified the
+  stakeholder groups, but did not appoint the representatives.
+\item
+  19\% were in the \textit{Represented} state. These proposals
+  identified the stakeholder groups and the representatives of each
+  group.
+\end{itemize}
+
+For the \textbf{Opportunity} alpha, we observed that:
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  53\% were in the \textit{Identified} state. These proposals indicated the
+  need for a software solution with the stakeholders wishing to make an
+  investment.
+\item
+  33\% were in the \textit{Solution Needed} state. These proposals clearly
+  articulated the problem with confirmation on the need for a solution.
+\item
+  14\% were in the \textit{Value Established} state. These proposals
+  established the business value with a clear definition of desired
+  outcomes and success criteria.
+\end{itemize}
+
+For the \textbf{Requirements} alpha, we observed that:
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  5\% did not achieve any state.
+\item
+  71\% were in the \textit{Conceived} state. These proposals captured the 
+  itemize system purpose with the user types involved.
+\item
+  19\% were in the \textit{Bounded} state. These proposals defined their 
+  scope with a clear definition of the success criteria.
+\item
+  5\% were in the \textit{Coherent} state. These proposals captured and
+  prioritized the requirements.
+\end{itemize}
+
+For the \textbf{Software System} alpha, we observed that:
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  90\% did not achieve any state. These proposals did not describe the
+  platforms, technologies or languages for the project.
+\item
+  10\% were in the \textit{Initiated} state. These proposals identified the
+  criteria for selecting the architecture. These proposals described the key technical risks and buy, build or reuse decisions made for the project.
+\end{itemize}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.45in]{ProposalAlphasChartsStacked.png}
+\caption{Essence alphas checked for a proposal and shaded for green-lighting project stat}
+\label{ProposalChart}
+\end{figure}
+
+
+In summary, we identified that 19\% of the proposals had represented
+\textbf{Stakeholders}, 14\% of the proposals established the business value
+of the \textbf{Opportunity}, 95\% \footnote{95\% is all the projects minus the 5\% that did not achieve any state} of the proposals captured the high level \textbf{Requirements} (and 24\% \footnote{24\% is the percentage of Bounded (19\%) and Coherent (5\%) projects} captured the project scope and success criteria), and 10\% of the proposals had defined criteria for selecting or identifying the \textbf{Software System} architecture. Since we do not expect the proposals to define architecture selection criteria, we are mostly concerned about the low
+percentages for \textbf{Stakeholders} and \textbf{Opportunity} alphas. Regarding
+the \textbf{Requirements} alpha, we would also like to increase the number of
+proposals with defined project scope and success criteria.
+
+
+\subsection{Research Question 2: What are the recent
+issues with the practicum and could we address some of these issues
+prior to the start of the project?}
+
+While experimenting with Essence Reflection Meetings in the
+context of practicum projects \cite{EASE2014, ICSE2014}, we
+noticed that some practicum issues could potentially be identified and
+addressed before the engagement started. These issues typically involve:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Missing stakeholder representation
+\item
+  Unclear opportunity value, and
+\item
+  Undefined project scope and success criteria
+\end{itemize}
+
+\textbf{Missing stakeholder representation:} Philosophical differences about
+stakeholder representation present a challenge. The faculty believe that
+most stakeholder groups should be represented and that a single
+person cannot represent every stakeholder group because the groups
+typically have very different needs. On one project, the team was building
+a benchmark for comparing native code versus HTML5 code
+on Android devices for the purpose of publishing the results to the
+development community. While using the Essence framework for project
+monitoring and steering \cite{ICSE2014}, the team
+realized that no one represented the development community stakeholder
+group. The team proactively interviewed local mobile developers and
+presented the findings to the client. The client chose to ignore the
+feedback putting at risk the potential benefit of the benchmarking
+report to the development community. If a client is unwilling (or does
+not understand the need) to have a representative for each (or most)
+stakeholder groups, then the Request for Proposal process should
+identify this issue and we can discuss our perspective with the client. If
+the client is unwilling to change, we can decide to reject the
+proposal.
+
+\textbf{Unclear opportunity value and undefined project scope and success
+criteria:} On a few projects, the teams spent the first two to three
+weeks identifying the underlying problem and
+analyzing the market trends and competitive landscape to validate the
+need for a solution. Then they spent more iterations agreeing on the
+project scope and success criteria. While this is an interesting
+exercise, this significantly delayed the implementation work so that
+the some teams delivered substantially less functionality than the other
+teams. Establishing the value of the opportunity and potentially
+defining the project scope and success criteria at the start of the
+practicum would have provided the practicum teams enough time to
+build an interesting solution.
+
+We believe that improving ``project readiness'' enhances the student
+experience. If the stakeholder groups are not represented, then the
+client can find representatives prior to the start of the project. If a
+client cannot clearly articulate the opportunity, the project's
+benefits, the project's scope, or the project's success criteria, then
+we can accept other proposals that have a larger impact.
+
+Addressing these issues prior to the start of the practicum would
+better align the expectations of the client with our educational goals,
+give the students a richer experience, provide more value to the client,
+and further the impact of the university.
+
+\subsection{Research Question 3: From the faculty perspective, what should be the minimum or ideal initial state of a project?}
+
+\begin{table*}
+\caption{Green-lighting project state for each Essence Alpha (CMU1.1)}
+\label{GreenLightingProjectState}
+\begin{tabular}{|l|p{2.50in}|p{3.35in}|}
+\hline
+\textbf{Alpha}  & \textbf{Minimally acceptable}       & \textbf{Ideal}                        \\ \hline
+Stakeholders    & \textbf{Recognized (Partial)}       & \textbf{Represented (Partial)}        \\ 
+                & (check) Possible stakeholder groups are identified & (check) Stakeholder representatives are appointed \\
+                & (not) Team agrees on relevant stakeholder groups & (check) Stakeholder representatives agree to take on responsibilities \\
+                & to be represented                 & (not) Stakeholders agree on collaboration approach \\
+                & (not) Responsibilities of stakeholder representatives  & (not) Representatives respect team's way of working \\
+                & are defined                         & (check) Stakeholder representatives empowered to take on responsibilities \\ \hline
+Opportunity     & \textbf{Solution Needed (Complete)} & \textbf{Value Established (Complete)} \\[5ex] \hline
+Requirements    & \textbf{Conceived (Complete)}       & \textbf{Bounded (Partial)}            \\
+                &                                     & (check) Purpose and extent of system are agreed \\
+                &                                     & (check) Success criteria are clear \\
+                &                                     & (not) Processes and tools for handling requirements are in place \\
+                &                                     & (check) Scope constraints are identified \\
+                &                                     & (not) Assumptions made while defining requirements are captured \\ \hline
+Software System & None                                & \textbf{Initiated (Partial)} \\
+                &                                     & (check)Criteria for selecting architecture are agreed \\
+                &                                     & (check) Platforms, technologies, languages are selected \\
+                &                                     & (check) Selected architecture addresses key technical risks \\
+                &                                     & (check) Buy, build, reuse decisions are made \\
+                &                                     & (not) Stakeholders agree on necessary documentation \\
+                &                                     & (not) Stakeholders agree on support service levels \\
+                &                                     & (check) Non-functional architectural characteristics are considered \\ \hline
+\end{tabular}
+\end{table*}
+
+After reviewing the practicum proposals and reflecting on practicum
+issues listed in \textbf{Research Question 2}, we created green-lighting project
+states for each Essence alpha documented in Table~\ref{GreenLightingProjectState}.
+
+The existing literature \cite{EssenceBook} implies
+that staging (green-lighting in our case) can be done at the Alpha state
+level. In the process of creating our green-lighting project states, we
+discovered that for some of the alpha states, we could not select all
+the checklist items in the entire state. For example, at the proposal
+stage, we do not expect responsibilities of the stakeholder
+representatives to be defined; this happens through a conversation
+between the team and the stakeholder representatives. In creating the
+green-lighting project state, we ignored some checklist items thus
+creating partial alpha states.
+
+\subsection{Research Question 4: How do the proposals
+compare against the proposed minimum and ideal green-lighting project
+states?}
+
+Now that we have evaluated the proposals (Step 1) and created the
+green-lighting project states (Step 2), we identify which proposals
+meet the green-lighting criteria (Step 3 of the Green-lighting Approach). 
+
+Table~\ref{table_proposal_evaluations} shows the proposals from the Spring 2014 and Summer 2014 semesters that meet the minimally acceptable and ideal criteria for green-lighting. 
+
+\begin{table}
+\caption{Proposals compared to green-lighting project states}
+\label{table_proposal_evaluations}
+\begin{tabular}{|l|p{1.10in}|p{1.10in}|}
+\hline
+Alpha & Number of projects that met minimally acceptable criteria & Number of projects that met ideal criteria \\ \hline
+Stakeholders & 14 out of 21 & 4 out of 21 \\ \hline
+Opportunity & 10 out of 21 & 3 out of 21 \\ \hline
+Requirements & 20 out of 21 & 5 out of 21 \\ \hline
+Software System & 21 out of 21 & 2 out of 21 \\
+\hline
+\end{tabular}
+\end{table}
+
+This analysis revealed a gap between the proposals and our
+expectations, specifically in regard to representing stakeholders and
+establishing the value of the opportunity.
+
+Around one third of the proposals did not have appropriate
+representation for different stakeholder groups. In these proposals, the
+client themselves would define, prioritize and validate the needs of the
+different stakeholders groups. In our experience, when a team finishes
+this kind of project, there is a high probability that the solution
+would not deliver sufficient value for each stakeholders group. In some
+cases, the solution may be unusable.
+
+Around half of the proposals did not clearly state the
+opportunity. The proposals described the problem to be solved, but did
+not articulate the benefit of solving the problem. In a few cases, we
+suspect the client has found a ``solution'' but has not yet identified
+the problem to solve. In our experience, at the end of the project,
+the project would be ``successful'' in delivering code to the client,
+but might not solve a real world problem. Alternatively, the client
+might have a detailed understanding of the opportunity, but may have not
+clearly communicated that opportunity in the proposal.
+
+The current proposals contain the same issues as the previous practicums
+identified in Research Question 2. The Green-Lighting Approach surfaced
+that the current proposals could repeat the problems in the past.
+
+
+\subsection{Research Question 5: Do we need to
+improve the Request for Proposal?}
+
+In observing the gap between the proposals and our desired minimal
+state, we wondered if asking different questions would help the sponsors
+to record the kind of information that we need. Since the proposal's
+content is a proxy for the sponsor's knowledge, is it possible that the
+sponsor has more detailed knowledge that is not recorded in the proposal?
+In addition, simply asking a question might cause the client to do some
+groundwork not originally considered, which could potentially move the
+project to a higher initial state. 
+
+We had difficulty determining the stakeholder groups in the
+ \textbf{Stakeholders} alpha, the projected value of software system in the
+ \textbf{Opportunity} alpha, the list of high-level requirements that captures
+the system purpose in the \textbf{Requirements} alpha, and the non-functional
+architectural characteristics in the \textbf{Software System} alphas. The
+Request for Proposal does not clearly ask for this information. We need
+to ask specific questions to determine if the client can articulate the
+answers. Improving the Request for Proposal would also facilitate
+easier analysis for these aspects.
+
+In order to help ascertain this information, we asked the sponsors four
+questions.
+
+{Survey Question 1. List your stakeholder groups and identify who will be
+representing each group. (Note: Ideally there should be a different
+person representing each group.)}
+
+In examining the free-text answers, about \sfrac{2}{3} of the sponsors listed
+out different stakeholder groups. A few even named who would fulfill the
+role. One third of the sponsors listed themselves as the primary and
+only stakeholder. In reviewing the proposals, these sponsors are not the
+target stakeholder groups. This suggests that these proposals could be
+misaligned with our educational goals of involving every stakeholder
+group in the process.
+
+{Survey Question 2. What value would the stakeholders receive from a successful engagement? If possible, please quantify the value (e.g. monetary
+value, social return).}
+
+In examining free-text answers, about half of the respondents were not
+able to articulate the opportunity of the proposal. The other half of
+the respondents appealed to social returns such as improving the
+emergency response situations which could save lives and reduce injuries
+or connecting seniors to their families and caregivers. None of the
+respondents were able to put a monetary value to the opportunity.
+
+{Survey Question 3. What features would you like to see implemented during the
+practicum? }
+
+In reviewing the free-text answers, about half of the sponsors provided
+a feature list. The other half provided vague answers to the question.
+This question needs to be rephrased. Perhaps asking the client to
+prioritize the features to be delivered would be more effective.
+
+{Survey Question 4. What are the key non-functional requirements (e.g.
+scalability, security, performance, etc) that the solution should
+satisfy?}
+
+Most of the sponsors were able to clearly articulate the quality
+attributes needed for the project. One sponsor said, ``Software will be
+written in C/C++, documented well and reusable.'' 
+
+When the answer does not fully or properly articulate the
+non-functional requirements of the system, we recommend that the course
+owner interviews the sponsor to acquire this information. 
+
+The results from questions 1 and 2 are consistent with our assessment
+of the proposals from Research Question 1. Adding these questions would
+facilitate analysis but might not cause the sponsors to change the
+stakeholder representation. Additional conversations between the course owner and the sponsor might be necessary.
+
+Based upon these results, we plan to add questions 1, 2, and 4 to our
+Request for Proposal. We will continue to experiment to find a question
+that elicits a list of high-level requirements. These improvements to
+our Request for Proposal will help us better assess the initial states
+of the proposals.
+
+% \subsection{Research Question 6: What is the effect of
+% using the Essence Green-lighting Approach on the time it takes to accept
+% or reject a project?}
+
+% With modifications to the Request for Proposal questions, we believe
+% that the Essence Green-lighting Approach would structure, simplify, and
+% reduce the amount of time it takes to accept or reject a proposal when compared to our current process.
+% However this remains to be verified.
+
+In the current Request for Proposal process, the course owner reads
+through each proposal to verify its completeness. We noticed that
+clients submit ad-hoc proposals without necessarily following the
+provided guidelines in terms of structure and content. This makes
+assessing the readiness of each proposal arduous. The Request for
+Proposal process provides a non-editable document and asks the sponsor
+to address the items listed in Section
+\ref{ProposalQuestions}. We recommend replacing this
+document with a restructured editable template where the sections are
+clearly aligned to the four Essence Alphas. Clients would be asked to
+fill-in the sections of this template. 
+
+% With the proposed Green-lighting Approach, the course owner still needs
+% to read through each proposal, but instead of looking for completeness,
+% the course owner assesses the four Essence Alphas in the green-lighting
+% project state. This requires the small additional effort of reading
+% through at most 23 checklist items, and even less if the proposals are
+% less mature. These changes would reduce the time on task for the current
+% verification for completeness of ad-hoc proposals by organizing the data
+% provided by the client and simplifying the assessment of the
+% green-lighting project states.
+
+\subsection{Research Question 6: What are limits to
+the approach and limitations to its effectiveness?}
+
+\subsubsection{Green-lighting Approach does not factor important business considerations}
+The approach provides data for a structured decision making process for
+accepting and rejecting proposals, however, there might be reasons to
+have a project go forward even though green-lighting says ``no.''
+Several examples include paying clients, a high impact project, career
+opportunity for students, and potential partnership for research
+collaboration. While the approach provides a black and white answer,
+we suspect that sound judgment is required for special circumstances.
+
+\subsubsection{Green-lighting project states do not always
+align to Alpha states}
+
+In following the Green-lighting Approach, we discovered that partial
+states, not alpha states represent our proposal acceptance criteria.
+Some of the checklist items on one Alpha state would apply to accepting
+a proposal and the rest of the checklist items would not. Using partial
+states is possible but inconvenient. 
+
+For example, for us to green-light a proposal, we would expect that the
+proposal would meet the first checklist item of the
+ \textbf{Stakeholders} \textit{Recognized} card, not the second or third as
+described in Table \ref{GreenLightingProjectState}.
+
+From this case study, the two main limitations are 1) the approach does
+not explicitly factor in business forces that affect proposal selection
+and 2) the fact that we need to split the checklist items on the alpha
+state cards to represent our green-lighting project states prevent from
+using the Essence cards out of the box hence losing the simplicity of
+the cards.
+
+\subsubsection{Green-lighting approach relies upon the Essence kernel}
+The Green-lighting approach relies upon the Essence kernel for providing a systematic framework for evaluating proposals. It is possible that a simpler checklist could be evolved, rather than relying upon the Essence kernel.
+
+\subsubsection{Green-lighting approach does not guarantee project success}
+Given the variety of issues that can emerge from a student project experience,
+the green-lighting approach is not a silver bullet that will solve all team-based issues.
+The approach allows the instructor to systematically examine each proposal to identify
+issues that the instructor can solve, mitigate against, decide not to deal with by rejecting the proposal.
+
+\subsection{Threats to Validity}
+Internal Validity: This work assumes that it is desirable to filter
+proposals and that is is possible to select proposals that will better achieve the
+practicum goals listed in Section \ref{Introduction}. It could be the case
+that a rejected proposal would have more significant learning
+opportunities for the students than an accepted proposal. 
+
+Experimenter bias: we each had one years worth of experience in working with
+the Essence framework prior to the start of this research. It is
+possible that someone with less experience may encounter different results.
+
+\section{Conclusions and Future Work}
+\label{Conclusion}
+
+We proposed a Green-lighting Approach using the Essence Kernel and
+applied the approach to the Request for Proposal process for the
+practicum course at Carnegie Mellon University in Silicon Valley. After
+receiving a set of proposals, the faculty reviewed the proposals and
+determined the proposal state for each Essence Alpha. Based upon the
+initial states of the new proposals, prior experience, and recent
+problems, we created a gating function called green-lighting project
+state to screen out proposals that were not ready for student teams.
+Proposals that did not pass the minimal acceptance criteria would be
+rejected. After creating the green-lighting project state for each
+Essence Alpha, we realized that the current Request for Proposal did
+not prompt the clients to provide enough detail about the stakeholder
+representations, the projected value of the opportunity, the project
+scope and success criteria, and non-functional architectural
+characteristics of the software system. We created draft 
+questions and then tested the new questions with the prospective
+clients. We recommend modifying the Request for Proposal to include
+an editable template structured around the Essence Alphas and to include
+several of the new questions identified in this paper.
+
+In future work, we could consider asking sponsors to do a self
+assessment of their proposal directly against the Essence checklist. 
+%\sout{We could modify the Request for Proposal process to allow for the clients
+%to assess their proposal maturity using the checklists from the Essence
+%Kernel.} 
+This runs the risk that sponsors may be overly optimistic about 
+their self-assessment in order to pass our filter.
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+% \section*{Acknowledgment}
+
+% The authors would like to thank...
+
+
+
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+% \begin{thebibliography}{1}
+
+% \bibitem{IEEEhowto:kopka}
+% H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%   0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+% \end{thebibliography}
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+
+% that's all folks
+\end{document}
+
+
