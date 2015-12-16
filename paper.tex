@@ -386,12 +386,11 @@
 % of the page, use this alternative format:
 %
 \author{\IEEEauthorblockN{Todd Sedano,
-Cecile Peraire,
-Arthi Rengasamy}
+Arthi Rengasamy, C\'ecile P\'eraire}
 \IEEEauthorblockA{Carnegie Mellon Unveristy \\
 Silicon Valley Campus\\
 Moffett Field, CA 94035, USA \\
-Email: todd.sedano@sv.cmu.edu, cecile.peraire@sv.cmu.edu, arthi.rengasamy@sv.cmu.edu
+Email: todd.sedano@sv.cmu.edu, arthi.rengasamy@sv.cmu.edu, cecile.peraire@sv.cmu.edu,
 }}
 
 
@@ -428,31 +427,39 @@ Email: todd.sedano@sv.cmu.edu, cecile.peraire@sv.cmu.edu, arthi.rengasamy@sv.cmu
 %Conclusion: The Green-Lighting Approach provides systematic
 %evaluation of our proposals and helps articulate why to accept or reject a proposal.
 %\end{abstract}
-begin{abstract}
+
+
+\begin{abstract}
 Many software engineering curriculum conclude with a
 practicum or capstone project course. For courses involving external
 clients, the course owner typically follows a Request for Proposal
-process to vet qualified clients and projects.
+process to vet (or green-light) qualified clients and projects.
+
+Even though green-lighting projects does not guarantee project success, 
+the goal is to reduce risks by systematically examining each proposal to identify
+potential problems that the instructor could solve, mitigate against, 
+or simply decide not to deal with by rejecting the proposal.
 
 We propose and evaluate a Green-Lighting Approach based on the
-SEMAT (Software Engineering Method and Theory) Essence Kernel for
-improving the request for proposal process at Carnegie Mellon University
-in Silicon Valley.
+SEMAT (Software Engineering Method and Theory) Essence framework. 
+Our objective is to identify if such a framework could improve the Request for Proposal process 
+at Carnegie Mellon University in Silicon Valley and other universities.
 
 We conducted a case study by observing and interviewing the
 course owner, examining a group of proposals, and identifying issues
 with the current proposal process and practicum projects.
+We proposed a green-lighting project state that, based upon Essence Alphas,
+describes the minimal and ideal states that a project proposal should achieve to be accepted. 
 
-We propose a green-lighting project state that, based upon Essence alphas,
-describe the minimal and ideal states that a project proposal should achieve to be
-accepted, based on Essence alphas. The Green-Lighting Approach generated
-conversations among the faculty that clarified the guidelines for
-accepting and prioritizing proposals and identified deficiencies in our
-Request for Proposal.
+The Green-Lighting Approach generated conversations among the faculty 
+that clarified the guidelines for accepting and prioritizing proposals and identified deficiencies in our Request for Proposal. Additional work is required to refine the proposed Green-Lighting Approach based on current findings and further validate the approach.
+  
+Using Essence for green-lighting practicum projects in academia presents some limitations. 
+The framework does not explicitly factor in business forces that affect proposal selection,
+might be overly complex for the task, and might require modification with partial Alpha states. 
+However, Essence provides a systematic approach for evaluating proposals based on various project dimensions. 
+This approach could be used as an inspiration for deriving simpler custom green-lighting checklists. 
 \end{abstract}
-
-Conclusion: The Green-Lighting Approach provides systematic
-evaluation of our proposals and helps articulate why to accept or reject a proposal.
 
 
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
@@ -496,8 +503,7 @@ customer or management role. The practicum provides an opportunity for
 the students to work with a real client and practice client management
 skills. Students actively manage the client engagement while faculty
 observe and coach students without interfering unless necessary. The
-students perform as a consulting team delivering a product that achieves
-the client's opportunity.
+students perform as a consulting team delivering a product that addresses the client's opportunity.
 
 The university wants to increase its impact through the practicum
 projects. The practicum course owner needs to find projects that
@@ -510,7 +516,7 @@ balance these goals:
 \item
   achieve a business goal or positively impact society, and
 \item
-  increase collaborations between faculty and industry. 
+  increase collaborations between university and industry. 
 \end{itemize}
 
 In order to accomplish the practicum goals, the faculty want to offer
@@ -542,8 +548,6 @@ They describe several course models used in academia including the ``small group
 
 Shaw and Tomayko discusses the importance of finding an interesting project that will motivate the students for the duration of the course, but provides no model for client selection.
 
-\sout{In 1994, Moore and Potts \cite{moore1994learning} described how to do ``learn by doing'' in project courses at the undergraduate and graduate levels.}
-
 In 2001, Cal Poly \cite {Turner2001} introduced a year long capstone project course. For the first two years, they relied on one industrial partner for the entire course, but due to coordination difficulties replaced the external project with a university project. No guidance is provided for project selection.
 
 In 2002, Chamillard and Braun \cite{Chamillard2002} reflect on an undergraduate course at the U.S. Air Force Academy. They focus on tradeoffs such as the amount of guidance, documentation formats versus documentation examples, and focusing software development process versus product. They do not discuss their client selection process.
@@ -552,9 +556,9 @@ In 2002, Umphress, Hendrix, and Cross \cite{Umphress2002} reflect on their 18 ye
 
 In 2006, Coppit \cite{coppit2006} describes his strategies for overcoming the difficulties in running a large project team course including how to assess student performance. In his section on project selection, he briefly recommends that the amount of work should be commiserate with the length of the course, the scope needs to be flexible to allow cutting of features at the course's end, and have significant parallelizable work. 
 
-In 2010, Ziv and Patil \cite {ziv2010capstone} discus the experience of transitioning a capstone from one quarter to a three quarter course. The course follows a ``small group project'' model with external clients. The instructors typically have enough projects for all the enrolled students. Regarding selection criteria, the instructors take most projects within reasonable size, scope, goals and objectives, and reject only when the instructors notice a complete misunderstanding of the nature and purpose of a college-level undergraduate-level student project. 
+In 2010, Ziv and Patil \cite {ziv2010capstone} discuss the experience of transitioning a capstone from one quarter to a three quarter course. The course follows a ``small group project'' model with external clients. The instructors typically have enough projects for all the enrolled students. Regarding selection criteria, the instructors take most projects within reasonable size, scope, goals and objectives, and reject only when the instructors notice a complete misunderstanding of the nature and purpose of a college-level undergraduate-level student project. 
 
-In the literature, criteria for client selection is only briefly discussed. 
+Overall, criteria for client selection in the context of academic projects is only briefly discussed in the literature. 
 
 \section{Background}
 \label{Background}
@@ -569,24 +573,20 @@ manage risks, monitor progress and steer their projects
 
 During the research of applying the Project Monitoring and Steering
 Approach, we observed practicum issues regarding stakeholder
-representation, requirements definition, and understanding the value of
-the opportunity. Some aspects of these issues might be attributed to
-the way in which the practicum proposals are initiated and
-accepted. For example, one client believed that she could represent several different user personas and was unwilling for student teams to interview potential users. Our motivation is to examine our Request for Proposal
-process to help address these issues.
+representation, requirements definition, and understanding the value of the opportunity. Some aspects of these issues might be attributed to some extent to the way in which the practicum proposals are initiated and accepted. For example, one client believed that she could represent several different user personas and was unwilling for student teams to interview potential users. Our motivation is to examine our Request for Proposal process could help address these issues.
 
-We proposed and applied a Green-Lighting Approach based on the Essence
-framework \cite{EssenceBook} to improve our practicum selection
-process and to evaluate the approach. The Green-lighting Approach
-uses the Essence alphas to describe how ready the project should be in
-each alpha, which we'll call ``green-lighting project state'' in this
+We proposed and applied a Green-Lighting Approach based on the Essence framework \cite{EssenceBook}. Our objective is to identify if such a framework could potentially improve the Request for Proposal process at Carnegie Mellon University in Silicon Valley and other universities.
+
+The Green-lighting Approach
+uses the Essence Alphas to describe how ready the project should be in
+each Alpha, which we'll call ``green-lighting project state'' in this
 paper. The green-lighting project state serves as a gating function,
 filtering out unready projects.
 
 In this paper, we will introduce the Green-lighting Approach which
 provides a gating function for proposals. Section
 \ref{Field Study Description} describes the field study
-including the research goal, the current request for proposal, the
+including the research goal, the current Request for Proposal, the
 proposed change, and the study protocol. Section
 \ref{Results} examines seven research questions
 supporting the research goal. Section \ref{Conclusion}
@@ -598,10 +598,10 @@ summarizes that the findings and discusses future work.
 
 In 2012, the SEMAT community released the Essence kernel
 \cite{OMGStandard}. The Essence kernel describes a
-software project through different dimensions called alphas. For
-example, the \textbf{Stakeholder} alpha advances through the states
+software project through different dimensions called Alphas. For
+example, the \textbf{Stakeholder} Alpha advances through the states
 \textit{Recognized}, \textit{Represented}, \textit{Involved}, 
-\textit{In Agreement}, \textit{Satisfied for Deployment}, \textit{Experimenting}, and \textit{Satisfied in Use}. Each state has a set of checklist items. For example, \textit{Recognized} contains these three checklist items:
+\textit{In Agreement}, \textit{Satisfied for Deployment}, and \textit{Satisfied in Use}. Each state has a set of checklist items. For example, \textit{Recognized} contains these three checklist items:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -636,33 +636,32 @@ The Green-Lighting Approach has three steps:
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  Evaluate each proposal and determine its state in each alpha. For
-  example, a proposal that meets the three checklist items for
-   \textbf{Stakeholders} would have achieved the \textit{Recognized} state and thus
-  be in the\textit{Represented} state as seen in Figure
-  \ref{EssenceAlpha}. This is repeated for each alpha.
-  This data can be represented as a hash where the keys are the alphas
-  and the values are the alpha states, such as: \{stakeholders:
-  ``represented'', opportunity: ``solution needed'', requirements:
-  ``conceived'', software system: ``none''\}. The check marks in Figure
+  Evaluate each proposal and determine its state in each Alpha. For
+  example, considering the  \textbf{Stakeholders} Alpha, a proposal that meets the three checklist items tor \textit{Recognized}
+  and the four checklist items for \textit{Represented} would be marked as \textit{Represented} as seen in Figure
+  \ref{EssenceAlpha}. This is repeated for each Alpha.
+  This data can be represented as a hash where the keys are the Alphas
+  and the values are the Alpha states, such as: \{stakeholders:
+  ``represented'', opportunity: ``identified'', requirements:
+  ``conceived'', software system: ``architecture selected''\}. The check marks in Figure
   \ref{EssenceAlpha} indicate the proposal's project
   state.
 \item
   Determine the ``green-lighting project state,'' which is the minimal
-  acceptable state for each alpha. This too can be represented as a
+  acceptable state for each Alpha. This too can be represented as a
   hash. In our example, the green-lighting project state could be:
   \{stakeholders: ``recognized'', opportunity: ``solution needed'',
-  requirements: ``conceived'', software system: ``none''\}. The shaded
+  requirements: ``conceived'', software system: ``none''\}. The circled
   states in Figure \ref{EssenceAlpha} represent the
   green-lighting project state.
 \item
   Applying the green-lighting project state to a proposal determines
   the project's readiness. A project is ready if the proposal has a
-  larger or equal state for each alpha in the green-lighting project
+  larger or equal state for each Alpha in the green-lighting project
   state. Using the hash example, we compare each key of the hash and
   make sure the proposal is ``larger or equal'' to each corresponding
   key in the green-lighting project state. In the given example, the
-  proposal is ready in each alpha. In this regard, the approval process
+  proposal is ready in each Alpha except Opportunity. In this regard, the approval process
   is a function with two inputs and one boolean output. F(Hash proposal,
   Hash greenlight\_project\_state) =\textgreater Boolean
   accept\_propopsal
@@ -670,21 +669,21 @@ The Green-Lighting Approach has three steps:
 
 % \begin{figure}[h]
 % \includegraphics[scale=0.25]{EssenceAlpha.jpg}
-% \caption{ Essence alphas checked for a proposal and shaded for
+% \caption{Essence alphas checked for a proposal and shaded for
 % green-lighting project state}\label{EssenceAlpha}
 % \end{figure}
 
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.45in]{EssenceAlpha.jpg}
-\caption{Essence alphas checked for a proposal and shaded for
-green-lighting project stat}
+\includegraphics[width=3.45in]{EssenceAlpha.png}
+\caption{Essence Alphas checked for a proposal and circled for
+green-lighting project state}
 \label{EssenceAlpha}
 \end{figure}
 
-In examining the seven Essence alphas, only four alphas,
-\textbf{Stakeholders}, \textbf{Opportunity}, \textbf{Requirements}, and \textbf{Software System} are relevant to evaluating practicum proposals. The OMG standard defines these four alphas as: \cite{OMGStandard}
+In examining the seven Essence Alphas, only four Alphas,
+\textbf{Stakeholders}, \textbf{Opportunity}, \textbf{Requirements}, and \textbf{Software System} are relevant to evaluating practicum proposals. The OMG standard defines these four Alphas as: \cite{OMGStandard}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -702,7 +701,7 @@ In examining the seven Essence alphas, only four alphas,
   that provides its primary value by the execution of the software.
 \end{itemize}
 
-The other three Essence alphas only make sense once a student team is
+The other three Essence Alphas only make sense once a student team is
 assigned to the project. Indeed, the \textbf{Team} has not been formed yet,
 hence it does not have a \textbf{Way of Working} and has not performed any
 \textbf{Work}. By course design, the client does not determine the team's
@@ -722,11 +721,11 @@ research goal using Goal/Question/Metric:
 \centering
 \begin{tabular}{|p{1.00in}|p{2.10in}|}
 \hline
-Analyze & SEMAT Essence’s Green-lighting Approach provided by the kernel alphas and their states \\ \hline
+Analyze & SEMAT Essence’s Green-lighting Approach provided by the kernel Alphas and their states \\ \hline
 for the purpose of & evaluation \\ \hline
 with respect to its & effectiveness \\ \hline
 from the point of view of the & educator and researcher \\ \hline
-in the context of  & he software engineering practicum graduate course at Carnegie Mellon University. \\
+in the context of  & the software engineering practicum graduate course at Carnegie Mellon University. \\
 \hline
 \end{tabular}
 \end{table}
@@ -741,9 +740,7 @@ This paper decomposes this goal into the following questions:
   \textbf{Research Question 1}: What is the initial state of most projects
   based on the current proposals?
 \item
-  \textbf{Research Question 2}: What are the recent issues with the practicum
-  and could we address some of these issues prior to the start of the
-  project?
+  \textbf{Research Question 2}: What are some problems with the practicum that could potentially be mitigated to some extent prior to the start of the project?
 \item
   \textbf{Research Question 3}: From the faculty perspective, what should be
   the minimum or ideal initial state of a project?
@@ -826,7 +823,7 @@ all the clients and students to a practicum fair. The course owner asks
 the students to be familiar with all of the practicum proposals. The
 purpose is to provide a forum for the students to ask the clients
 specific questions about the project, not for the client to give a
-complete presentation about the project.The clients introduce themselves
+complete presentation about the project. The clients introduce themselves
 and have a summary slide or two to remind the students about their
 project. 
 
@@ -850,6 +847,8 @@ meet the minimum criteria, then either the course owner rejects the
 proposal or the course owner discusses issues with the sponsor to
 illicit more information.
 
+Various elements, like the university relationship with the client, or financial considerations, are not taken into account by the SEMAT Essence Kernel, which is the first identified limitation of the framework for the purpose of green-lighting projects in academia.
+
 \subsection{Study Protocol}
 
 The study protocol is as follows:
@@ -866,7 +865,7 @@ The study protocol is as follows:
   Based upon our experience of observing the practicum course in the
   context of prior investigations \cite{EASE2014, ICSE2014},
   using a brainstorming session, we identified recent issues that
-  might be addressable prior to the start of the course (refer to
+  might be addressable to some extent prior to the start of the course (refer to
   \textbf{Research Question 2} for more information).
 \item
   During the same brainstorming session, we recommended a minimum and
@@ -900,9 +899,9 @@ state of most projects based on the current proposals?}
 
 We started the Green-lighting Approach research by assessing the
 initial states of the \textbf{Stakeholders}, \textbf{Opportunity},
-\textbf{Requirements} and \textbf{Software System} alphas for 21 proposals.
+\textbf{Requirements} and \textbf{Software System} Alphas for 21 proposals.
 
-For the \textbf{Stakeholder} alpha, we observed that:
+For the \textbf{Stakeholder} Alpha, we observed that:
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
@@ -917,7 +916,7 @@ For the \textbf{Stakeholder} alpha, we observed that:
   group.
 \end{itemize}
 
-For the \textbf{Opportunity} alpha, we observed that:
+For the \textbf{Opportunity} Alpha, we observed that:
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
@@ -933,7 +932,7 @@ For the \textbf{Opportunity} alpha, we observed that:
   outcomes and success criteria.
 \end{itemize}
 
-For the \textbf{Requirements} alpha, we observed that:
+For the \textbf{Requirements} Alpha, we observed that:
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
@@ -949,7 +948,7 @@ For the \textbf{Requirements} alpha, we observed that:
   prioritized the requirements.
 \end{itemize}
 
-For the \textbf{Software System} alpha, we observed that:
+For the \textbf{Software System} Alpha, we observed that:
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
@@ -963,7 +962,7 @@ For the \textbf{Software System} alpha, we observed that:
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.45in]{ProposalAlphasChartsStacked.png}
-\caption{Essence alphas checked for a proposal and shaded for green-lighting project stat}
+\caption{Essence Alphas checked for a proposal and shaded for green-lighting project stat}
 \label{ProposalChart}
 \end{figure}
 
@@ -971,14 +970,13 @@ For the \textbf{Software System} alpha, we observed that:
 In summary, we identified that 19\% of the proposals had represented
 \textbf{Stakeholders}, 14\% of the proposals established the business value
 of the \textbf{Opportunity}, 95\% \footnote{95\% is all the projects minus the 5\% that did not achieve any state} of the proposals captured the high level \textbf{Requirements} (and 24\% \footnote{24\% is the percentage of Bounded (19\%) and Coherent (5\%) projects} captured the project scope and success criteria), and 10\% of the proposals had defined criteria for selecting or identifying the \textbf{Software System} architecture. Since we do not expect the proposals to define architecture selection criteria, we are mostly concerned about the low
-percentages for \textbf{Stakeholders} and \textbf{Opportunity} alphas. Regarding
-the \textbf{Requirements} alpha, we would also like to increase the number of
+percentages for \textbf{Stakeholders} and \textbf{Opportunity} Alphas. Regarding
+the \textbf{Requirements} Alpha, we would also like to increase the number of
 proposals with defined project scope and success criteria.
 
 
-\subsection{Research Question 2: What are the recent
-issues with the practicum and could we address some of these issues
-prior to the start of the project?}
+\subsection{Research Question 2: What are some problems with the practicum that could potentially be mitigated to some extent prior to the start of the project?
+}
 
 While experimenting with Essence Reflection Meetings in the
 context of practicum projects \cite{EASE2014, ICSE2014}, we
@@ -1021,24 +1019,19 @@ weeks identifying the underlying problem and
 analyzing the market trends and competitive landscape to validate the
 need for a solution. Then they spent more iterations agreeing on the
 project scope and success criteria. While this is an interesting
-exercise, this significantly delayed the implementation work so that
-the some teams delivered substantially less functionality than the other
+exercise, this significantly delayed the implementation work so the teams delivered substantially less functionality than the other
 teams. Establishing the value of the opportunity and potentially
 defining the project scope and success criteria at the start of the
 practicum would have provided the practicum teams enough time to
 build an interesting solution.
 
-We believe that improving ``project readiness'' enhances the student
-experience. If the stakeholder groups are not represented, then the
-client can find representatives prior to the start of the project. If a
-client cannot clearly articulate the opportunity, the project's
+We believe that improving ``project readiness'' enhances the student experience, which remains to be verified in future research. If the stakeholder groups are not represented, then the
+client can find representatives prior to the start of the project. If a client cannot clearly articulate the opportunity, the project's
 benefits, the project's scope, or the project's success criteria, then
 we can accept other proposals that have a larger impact.
 
 Addressing these issues prior to the start of the practicum would
-better align the expectations of the client with our educational goals,
-give the students a richer experience, provide more value to the client,
-and further the impact of the university.
+better align the expectations of the client with our educational goals, give the students a richer experience, provide more value to the client, and further the impact of the university.
 
 \subsection{Research Question 3: From the faculty perspective, what should be the minimum or ideal initial state of a project?}
 
@@ -1061,8 +1054,8 @@ Requirements    & \textbf{Conceived (Complete)}       & \textbf{Bounded (Partial
                 &                                     & (not) Processes and tools for handling requirements are in place \\
                 &                                     & (check) Scope constraints are identified \\
                 &                                     & (not) Assumptions made while defining requirements are captured \\ \hline
-Software System & None                                & \textbf{Initiated (Partial)} \\
-                &                                     & (check)Criteria for selecting architecture are agreed \\
+Software System & None                                & \textbf{Architecture Selected (Partial)} \\
+                &                                     & (check) Criteria for selecting architecture are agreed \\
                 &                                     & (check) Platforms, technologies, languages are selected \\
                 &                                     & (check) Selected architecture addresses key technical risks \\
                 &                                     & (check) Buy, build, reuse decisions are made \\
@@ -1074,18 +1067,12 @@ Software System & None                                & \textbf{Initiated (Parti
 
 After reviewing the practicum proposals and reflecting on practicum
 issues listed in \textbf{Research Question 2}, we created green-lighting project
-states for each Essence alpha documented in Table~\ref{GreenLightingProjectState}.
+states for each Essence Alpha documented in Table~\ref{GreenLightingProjectState}.
 
 The existing literature \cite{EssenceBook} implies
-that staging (green-lighting in our case) can be done at the Alpha state
-level. In the process of creating our green-lighting project states, we
-discovered that for some of the alpha states, we could not select all
-the checklist items in the entire state. For example, at the proposal
-stage, we do not expect responsibilities of the stakeholder
-representatives to be defined; this happens through a conversation
-between the team and the stakeholder representatives. In creating the
-green-lighting project state, we ignored some checklist items thus
-creating partial alpha states.
+that staging (green-lighting in our case) can be done at the Alpha state level. In the process of creating our green-lighting project states, we discovered that for some of the Alpha states, we could not select all the checklist items in the entire state. For example, at the proposal stage, we do not expect responsibilities of the stakeholder representatives to be defined; this happens through a conversation between the team and the stakeholder representatives. In creating the green-lighting project state, we ignored some checklist items thus creating partial Alpha states.
+
+The minimally acceptable and ideal states were defined with the goal of mitigating the problems identified in the previous research question, and based on the researchers expertise. Further work is necessary to validate the proposed states for each Alpha in the context of our practicum projects. Note however that other project courses might require different sets of minimally acceptable and ideal states to better address their specific needs.
 
 \subsection{Research Question 4: How do the proposals
 compare against the proposed minimum and ideal green-lighting project
@@ -1106,14 +1093,14 @@ Alpha & Number of projects that met minimally acceptable criteria & Number of pr
 Stakeholders & 14 out of 21 & 4 out of 21 \\ \hline
 Opportunity & 10 out of 21 & 3 out of 21 \\ \hline
 Requirements & 20 out of 21 & 5 out of 21 \\ \hline
-Software System & 21 out of 21 & 2 out of 21 \\
-\hline
+Software System & 21 out of 21 & 2 out of 21 \\ \hline
+Overall (Across all Alphas) & 8 out of 21 & 0 out of 21 \\ \hline
 \end{tabular}
 \end{table}
 
 This analysis revealed a gap between the proposals and our
 expectations, specifically in regard to representing stakeholders and
-establishing the value of the opportunity.
+establishing the value of the opportunity. None of the proposals matched our ideal criteria across all Alphas, while 8 out of 21 satisfied our minimal expectation.
 
 Around one third of the proposals did not have appropriate
 representation for different stakeholder groups. In these proposals, the
@@ -1133,9 +1120,7 @@ but might not solve a real world problem. Alternatively, the client
 might have a detailed understanding of the opportunity, but may have not
 clearly communicated that opportunity in the proposal.
 
-The current proposals contain the same issues as the previous practicums
-identified in Research Question 2. The Green-Lighting Approach surfaced
-that the current proposals could repeat the problems in the past.
+The current proposals contain the same issues as the previous practicums identified in Research Question 2. The Green-Lighting Approach surfaced that the current proposals could repeat the problems identified in the past.
 
 
 \subsection{Research Question 5: Do we need to
@@ -1150,11 +1135,11 @@ In addition, simply asking a question might cause the client to do some
 groundwork not originally considered, which could potentially move the
 project to a higher initial state. 
 
-We had difficulty determining the stakeholder groups in the
- \textbf{Stakeholders} alpha, the projected value of software system in the
- \textbf{Opportunity} alpha, the list of high-level requirements that captures
-the system purpose in the \textbf{Requirements} alpha, and the non-functional
-architectural characteristics in the \textbf{Software System} alphas. The
+While analyzing the proposals, we had difficulty determining the stakeholder groups in the
+ \textbf{Stakeholders} Alpha, the projected value of software system in the
+ \textbf{Opportunity} Alpha, the list of high-level requirements that captures
+the system purpose in the \textbf{Requirements} Alpha, and the non-functional
+architectural characteristics in the \textbf{Software System} Alphas. The
 Request for Proposal does not clearly ask for this information. We need
 to ask specific questions to determine if the client can articulate the
 answers. Improving the Request for Proposal would also facilitate
@@ -1208,7 +1193,8 @@ owner interviews the sponsor to acquire this information.
 The results from questions 1 and 2 are consistent with our assessment
 of the proposals from Research Question 1. Adding these questions would
 facilitate analysis but might not cause the sponsors to change the
-stakeholder representation. Additional conversations between the course owner and the sponsor might be necessary.
+stakeholder representation. Additional conversations between the course 
+owner and the sponsor might be necessary.
 
 Based upon these results, we plan to add questions 1, 2, and 4 to our
 Request for Proposal. We will continue to experiment to find a question
@@ -1263,73 +1249,91 @@ we suspect that sound judgment is required for special circumstances.
 align to Alpha states}
 
 In following the Green-lighting Approach, we discovered that partial
-states, not alpha states represent our proposal acceptance criteria.
+states, not Alpha states, represent our proposal acceptance criteria.
 Some of the checklist items on one Alpha state would apply to accepting
-a proposal and the rest of the checklist items would not. Using partial
-states is possible but inconvenient. 
-
-For example, for us to green-light a proposal, we would expect that the
+a proposal and the rest of the checklist items would not. For example, 
+for us to green-light a proposal, we would expect that the
 proposal would meet the first checklist item of the
  \textbf{Stakeholders} \textit{Recognized} card, not the second or third as
-described in Table \ref{GreenLightingProjectState}.
+described in Table \ref{GreenLightingProjectState}. 
+Using partial states is possible but inconvenient. 
 
-From this case study, the two main limitations are 1) the approach does
-not explicitly factor in business forces that affect proposal selection
-and 2) the fact that we need to split the checklist items on the alpha
-state cards to represent our green-lighting project states prevent from
-using the Essence cards out of the box hence losing the simplicity of
-the cards.
-
-\subsubsection{Green-lighting approach relies upon the Essence kernel}
-The Green-lighting approach relies upon the Essence kernel for providing a systematic framework for evaluating proposals. It is possible that a simpler checklist could be evolved, rather than relying upon the Essence kernel.
+\subsubsection{Green-lighting approach relies upon the Essence framework}
+The Green-lighting approach relies upon the Essence kernel for providing 
+a systematic framework for evaluating proposals. The case study shows that  
+only a subset of the framework is leveraged: Only 4 out of the 7 Alphas are 
+relevant, and only the first few states (maximum 3) of each Alpha are necessary 
+to green-light a project. In addition, some of the states need to be only partially 
+considered as described in the previous section. Therefore, it is possible that a simpler checklist 
+could be evolved, rather than relying upon the Essence framework. The extra 
+complexity could be justified however if the project team continues to use 
+the Essence framework during development to leverage mechanisms like progress 
+monitoring and project steering. In that case it might make sense to use the 
+same framework throughout the project.
 
 \subsubsection{Green-lighting approach does not guarantee project success}
-Given the variety of issues that can emerge from a student project experience,
-the green-lighting approach is not a silver bullet that will solve all team-based issues.
-The approach allows the instructor to systematically examine each proposal to identify
-issues that the instructor can solve, mitigate against, decide not to deal with by rejecting the proposal.
+Given the variety of issues that can emerge from a student project experience, and the fact that the initial state has only a limited impact on the overall project, the green-lighting approach is not a silver bullet that will solve all team-based issues.
+Only some risks might be reduced by systematically examining each proposal to identify
+potential problems that the instructor could solve, mitigate against, 
+or simply decide not to deal with by rejecting the proposal.
 
 \subsection{Threats to Validity}
 Internal Validity: This work assumes that it is desirable to filter
 proposals and that is is possible to select proposals that will better achieve the
 practicum goals listed in Section \ref{Introduction}. It could be the case
 that a rejected proposal would have more significant learning
-opportunities for the students than an accepted proposal. 
+opportunities for the students than an accepted proposal.
 
-Experimenter bias: we each had one years worth of experience in working with
+Experimenter bias: We each had one years worth of experience in working with
 the Essence framework prior to the start of this research. It is
 possible that someone with less experience may encounter different results.
 
 \section{Conclusions and Future Work}
 \label{Conclusion}
 
-We proposed a Green-lighting Approach using the Essence Kernel and
+This paper presents a first attempt to characterize and study a project 
+selection process in academia. We proposed a Green-lighting Approach using the Essence framework and
 applied the approach to the Request for Proposal process for the
-practicum course at Carnegie Mellon University in Silicon Valley. After
-receiving a set of proposals, the faculty reviewed the proposals and
-determined the proposal state for each Essence Alpha. Based upon the
-initial states of the new proposals, prior experience, and recent
-problems, we created a gating function called green-lighting project
-state to screen out proposals that were not ready for student teams.
-Proposals that did not pass the minimal acceptance criteria would be
-rejected. After creating the green-lighting project state for each
-Essence Alpha, we realized that the current Request for Proposal did
+practicum course at Carnegie Mellon University in Silicon Valley. 
+
+After receiving and reviewing a set of proposals, the faculty determined each 
+proposal state for each Essence Alpha. Based upon these initial states, prior experience, 
+and recent problems, we created a gating function called green-lighting project
+state to screen out proposals that are not ready for student teams.
+
+After creating the green-lighting project state for each
+Essence Alpha, we realized that our current Request for Proposal did
 not prompt the clients to provide enough detail about the stakeholder
 representations, the projected value of the opportunity, the project
 scope and success criteria, and non-functional architectural
 characteristics of the software system. We created draft 
 questions and then tested the new questions with the prospective
-clients. We recommend modifying the Request for Proposal to include
+clients. We recommend modifying our Request for Proposal to include
 an editable template structured around the Essence Alphas and to include
-several of the new questions identified in this paper.
+several of the new questions identified in this paper. 
 
-In future work, we could consider asking sponsors to do a self
-assessment of their proposal directly against the Essence checklist. 
-%\sout{We could modify the Request for Proposal process to allow for the clients
-%to assess their proposal maturity using the checklists from the Essence
-%Kernel.} 
-This runs the risk that sponsors may be overly optimistic about 
-their self-assessment in order to pass our filter.
+Further research is necessary to validate our green-lighting project state 
+as well as our modified Request for Proposal. 
+Even though green-lighting projects does not guarantee project success, 
+the goal is to reduce risks by systematically examining each proposal to identify
+potential problems that the instructor could solve, mitigate against, 
+or simply decide not to deal with by rejecting the proposal.
+More work is necessary to verify that our approach helps us reach that goal.
+
+Using the Essence framework for green-lighting practicum projects in academia presents some limitations. 
+First, the approach does not explicitly factor in business forces that affect proposal selection. 
+Second, the Essence framework might be overly complex for green-light practicum projects, 
+as only a subset of the Essence framework is necessary to perform the task.
+In addition, the need to split the checklist items on the Alpha states to represent green-lighting 
+project states prevents us from using the Essence cards out of the box hence losing the simplicity of the cards.
+
+Still, project courses that use the Essence framework during development (to leverage mechanisms such as progress 
+monitoring and project steering \cite{ICSE2014}) might want to borrow some ideas from the proposed green-lighting approach, 
+as it might make sense to leverage the same framework throughout the project.
+In that case, we recommend customizing the approach by defining minimally acceptable and ideal states based on the course specific needs. 
+
+For project courses that are not planning on using Essence during development, 
+the framework could still be used as an inspiration for deriving simple custom green-lighting checklists for various project dimensions. Better aligning client proposals and educational goals has the potential of enhancing the students learning experience.
 
 
 % An example of a floating figure using the graphicx package.
